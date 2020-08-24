@@ -75,3 +75,13 @@ plot(dat,
     Scale.xgroup(),
     Scale.ygroup(),
 )
+
+
+##
+
+## this doesn't work
+using AlgebraOfGraphics, AbstractPlotting, CairoMakie
+vars = AlgebraOfGraphics.style(:days, :reaction)
+grp = AlgebraOfGraphics.style(layout_x = :subj)
+geom = spec(Scatter) + AlgebraOfGraphics.linear
+data(sleepstudy) * vars * grp * geom |> draw
